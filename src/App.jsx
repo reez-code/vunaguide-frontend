@@ -9,12 +9,10 @@ import { ChatTab } from "./components/ChatTab";
 import { ResultCard } from "./components/ResultCard";
 import { ErrorMessage } from "./components/ui/ErrorMessage";
 
-const API_URL = "http://127.0.0.1:8000/api/v1/analyze";
+import { API_ENDPOINTS } from "./utils/config";
 
 export default function App() {
   const [activeTab, setActiveTab] = useState("diagnose");
-
-  // Diagnosis State
   const [result, setResult] = useState(null);
 
   // Chat State
@@ -29,14 +27,14 @@ export default function App() {
     setError(null);
     setResult(null);
 
-    // Clear old chat if switching context (optional)
     if (window.innerWidth < 768) setResult(null);
 
     const formData = new FormData();
     formData.append("file", file);
 
     try {
-      const response = await axios.post(API_URL, formData, {
+      // ✅ FIX: Use API_ENDPOINTS.ANALYZE
+      const response = await axios.post(API_ENDPOINTS.ANALYZE, formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
       setResult(response.data);
@@ -50,7 +48,6 @@ export default function App() {
 
   // 2. Handle Chat Message
   const handleChat = async (text) => {
-    // Add User Message immediately
     const userMsg = { role: "user", text: text };
     setChatHistory((prev) => [...prev, userMsg]);
 
@@ -61,9 +58,9 @@ export default function App() {
     formData.append("question", text);
 
     try {
-      const response = await axios.post(API_URL, formData);
+      // ✅ FIX: Use API_ENDPOINTS.ANALYZE
+      const response = await axios.post(API_ENDPOINTS.ANALYZE, formData);
 
-      // Add AI Response
       const aiMsg = {
         role: "ai",
         text: response.data.local_advice,
@@ -158,7 +155,6 @@ export default function App() {
                   exit={{ opacity: 0, x: -20 }}
                   transition={{ duration: 0.2 }}
                 >
-                  {/* Chat Component handles its own UI */}
                   <ChatTab
                     history={chatHistory}
                     onAsk={handleChat}
