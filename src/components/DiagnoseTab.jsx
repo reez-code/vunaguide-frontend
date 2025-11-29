@@ -75,8 +75,8 @@ export function DiagnoseTab({ onAnalyze, loading }) {
           <Camera className="w-8 h-8 text-emerald-600" />
         </div>
         <div className="text-center">
-          <p className="font-semibold text-gray-700">Take a Photo</p>
-          <p className="text-xs text-gray-400">or upload from gallery</p>
+          <p className="font-semibold text-gray-700">Take Photo or Upload</p>
+          <p className="text-xs text-gray-400">Select from Gallery or Camera</p>
         </div>
       </button>
       <input
@@ -84,7 +84,7 @@ export function DiagnoseTab({ onAnalyze, loading }) {
         ref={inputRef}
         className="hidden"
         accept="image/*"
-        capture="environment"
+        // ✅ FIX: Removed 'capture="environment"' to allow Gallery selection
         onChange={handleFile}
       />
     </div>
