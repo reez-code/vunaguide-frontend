@@ -1,4 +1,4 @@
-# VunaGuide Frontend
+# 📱 VunaGuide Frontend
 
 <p align="center">
   <strong>AI-Powered Crop Doctor for Smallholder Farmers in Kenya 🇰🇪</strong>
@@ -6,9 +6,20 @@
 
 <p align="center">
   <a href="https://github.com/reez-code/vunaguide-backend">View Backend Repository</a> · 
-  <a href="https://github.com/reez-code/vunaguide-frontend/issues/new?labels=bug">Report Bug</a> · 
-  <a href="https://github.com/reez-code/vunaguide-frontend/issues/new?labels=enhancement">Request Feature</a>
+  <a href="https://github.com/reez-code/vunaguide-frontend/issues/new?labels=bug">Report Bug</a>
 </p>
+
+---
+
+## 📚 Project Deliverables
+
+Quick links to the Capstone Project submission materials:
+
+| Document                   | Link                                                                                                                       |
+| -------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| 📄 **Project Proposal**    | [View Google Doc](https://docs.google.com/document/d/1tAN6yM6T1TUdohKAtnYYygQ1C1xdmsVFu4c41qNPaJk/edit?usp=sharing)        |
+| 🎥 **Demo Video**          | [Watch on Drive](https://drive.google.com/file/d/1-iOYKEFad-1yk5PLdJtbiNXA2myn8ocV/view?usp=sharing)                       |
+| 📽️ **Presentation Slides** | [View Google Slides](https://docs.google.com/presentation/d/1qI59H0HEXb11qoDk-birVToY1getH9qA6wd5CQzIwaI/edit?usp=sharing) |
 
 ---
 
