@@ -1,4 +1,4 @@
-# 📱 VunaGuide Frontend
+# VunaGuide Frontend
 
 <p align="center">
   <strong>AI-Powered Crop Doctor for Smallholder Farmers in Kenya 🇰🇪</strong>
@@ -6,8 +6,8 @@
 
 <p align="center">
   <a href="https://github.com/reez-code/vunaguide-backend">View Backend Repository</a> · 
-  <a href="#">Report Bug</a> · 
-  <a href="#">Request Feature</a>
+  <a href="https://github.com/reez-code/vunaguide-frontend/issues/new?labels=bug">Report Bug</a> · 
+  <a href="https://github.com/reez-code/vunaguide-frontend/issues/new?labels=enhancement">Request Feature</a>
 </p>
 
 ---
@@ -86,7 +86,7 @@ Follow these steps to run the frontend locally.
 Clone the repository and install dependencies:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/vunaguide-frontend.git
+git clone https://github.com/reez-code/vunaguide-frontend.git
 cd vunaguide-frontend
 npm install
 ```
