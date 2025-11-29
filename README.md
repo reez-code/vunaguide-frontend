@@ -1,63 +1,154 @@
-📱 VunaGuide Frontend (React + Vite)
+# 📱 VunaGuide Frontend
 
-The client-side application for VunaGuide, designed with a mobile-first approach to serve smallholder farmers in low-bandwidth environments. It provides a clean interface for diagnosing crop diseases via camera and chatting with the AI Agronomist.
+<p align="center">
+  <strong>AI-Powered Crop Doctor for Smallholder Farmers in Kenya 🇰🇪</strong>
+</p>
 
-✨ Features
+<p align="center">
+  <a href="https://github.com/reez-code/vunaguide-backend">View Backend Repository</a> · 
+  <a href="#">Report Bug</a> · 
+  <a href="#">Request Feature</a>
+</p>
 
-Dual-Mode Interface: Seamlessly switch between Diagnose (Camera) and Chat (Text) tabs.
+---
 
-Mobile-Optimized: Large touch targets, native camera integration, and responsive grid layouts.
+## 📑 Table of Contents
 
-Real-Time Feedback: Animated loading states and clear result cards.
+- [Overview](#-overview)
+- [Key Features](#-key-features)
+- [Tech Stack](#-tech-stack)
+- [Setup Guide](#-setup-guide)
+- [How to Use](#-how-to-use)
+- [Project Structure](#-project-structure)
+- [License](#-license)
 
-Google Search Integration: Displays real-time grounded responses from the backend.
+---
 
-🛠️ Tech Stack
+## 📖 Overview
 
-Core: React 18, Vite
+VunaGuide bridges the gap between expert agronomy and smallholder farmers. This mobile-first web application provides an intuitive interface for farmers to:
 
-Styling: Tailwind CSS v4 (via @tailwindcss/vite)
+- **Diagnose Crop Diseases**: Instantly identify issues like Maize Lethal Necrosis or Tomato Blight using computer vision.
+- **Get Localized Advice**: Receive actionable, locally relevant treatment plans (e.g., specific Kenyan fungicides or organic remedies).
+- **Chat with an Expert**: Ask questions about planting seasons, market prices, and soil health, powered by real-time Google Search grounding.
 
-Icons: Lucide React
+Built for the **Unstacked Labs / Google AI Hackathon**, this frontend is optimized for performance in low-bandwidth environments common in rural Africa.
 
-Animations: Framer Motion
+---
 
-HTTP Client: Axios
+## ✨ Key Features
 
-🚀 Setup Guide
+### 📸 Visual Diagnosis (Computer Vision)
 
-1. Prerequisites
+- **Native Camera Integration**: Seamlessly captures photos directly from the device camera.
+- **Smart Analysis**: Uploads images to the backend Agent for instant disease identification.
+- **Actionable Results**: Displays clear, color-coded cards showing the disease name, confidence score, and a step-by-step treatment plan.
+- **Safety First**: Prominently displays "Sentinel Warnings" if the AI detects high-risk conditions or potentially harmful advice.
 
-Node.js 18+ installed.
+### 💬 AI Agronomist Chat
 
-The VunaGuide Backend running locally (or deployed).
+- **Natural Language Interface**: Farmers can ask questions in plain English (or Swahili mixed).
+- **Real-Time Grounding**: Answers are not just hallucinations; they are grounded in real-time data via Google Search (e.g., "Current fertilizer prices in Eldoret").
+- **Context Aware**: Remembers the conversation history for a natural back-and-forth flow.
 
-2. Installation
+### ⚡ Mobile-Optimized UX
 
-# Install dependencies
+- **Responsive Design**: A grid layout that adapts beautifully from small phones to large desktop screens.
+- **Touch-Friendly**: Large buttons and clear typography designed for ease of use in the field.
+- **Visual Feedback**: Animated loading states (spinners, pulse effects) assure the user the app is working even on slow connections.
 
+---
+
+## 🛠️ Tech Stack
+
+| Category        | Technology      | Why we chose it                                                                                             |
+| --------------- | --------------- | ----------------------------------------------------------------------------------------------------------- |
+| **Core**        | React 18        | Component-based architecture for modular UI development.                                                    |
+| **Build Tool**  | Vite            | Extremely fast development server and optimized production builds.                                          |
+| **Styling**     | Tailwind CSS v4 | Utility-first CSS for rapid, consistent, and responsive styling (using the new `@tailwindcss/vite` plugin). |
+| **Icons**       | Lucide React    | Lightweight, clean, and consistent icon set.                                                                |
+| **Animations**  | Framer Motion   | Smooth, hardware-accelerated animations for a polished feel.                                                |
+| **HTTP Client** | Axios           | Robust handling of API requests and multipart form data (image uploads).                                    |
+
+---
+
+## 🚀 Setup Guide
+
+Follow these steps to run the frontend locally.
+
+### 1. Prerequisites
+
+- **Node.js 18+** installed on your machine.
+- The [VunaGuide Backend](https://github.com/reez-code/vunaguide-backend) running locally (port 8000) or deployed.
+
+### 2. Installation
+
+Clone the repository and install dependencies:
+
+```bash
+git clone https://github.com/YOUR_USERNAME/vunaguide-frontend.git
+cd vunaguide-frontend
 npm install
+```
 
-3. Configuration
+### 3. Configuration
 
-Create a .env file in the root directory (optional if using default localhost):
+Create a `.env` file in the root directory to point to your backend. If running locally, you can skip this as it defaults to localhost.
 
-# Point this to your FastAPI backend URL
+```env
+# .env
+# Point this to your FastAPI backend URL (e.g., Cloud Run URL or localhost)
+VITE_API_URL=http://127.0.0.1:8000
+```
 
-VITE_API_URL=[http://127.0.0.1:8000](http://127.0.0.1:8000)
+### 4. Running Development Server
 
-4. Running Development Server
+Start the Vite development server:
 
+```bash
 npm run dev
+```
 
-The app will launch at: http://localhost:5173
+The application will launch at: **http://localhost:5173**
 
-📱 How to Use
+> **Tip**: Open this URL on your mobile phone (connected to the same WiFi) to test the camera integration!
 
-Diagnose Mode: Click the Camera icon to snap a photo of a sick plant. The app will display the disease name, confidence score, and treatment options.
+---
 
-Chat Mode: Ask questions like "When is the rainy season?" to get answers grounded in Google Search data.
+## 📱 How to Use
 
-📜 License
+| **Mode 1: Diagnose 📸**                                                                                     | **Mode 2: Chat 💬**                                                                             |
+| ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| Click the Camera icon to snap a photo of a sick leaf. Review the result card for disease status and advice. | Ask questions like _"When is the rainy season?"_ to get answers grounded in Google Search data. |
 
-MIT License.
+---
+
+## 📂 Project Structure
+
+```
+frontend/
+├── src/
+│   ├── components/         # Modular UI Components
+│   │   ├── ui/             # Reusable primitives (Button, ErrorMessage)
+│   │   ├── ChatTab.jsx     # Chat interface logic
+│   │   ├── DiagnoseTab.jsx # Camera/Upload logic
+│   │   ├── Header.jsx      # App navigation bar
+│   │   └── ResultCard.jsx  # Diagnosis display component
+│   ├── utils/              # Configuration & Helpers
+│   ├── App.jsx             # Main Application Layout
+│   └── main.jsx            # Entry Point
+├── public/                 # Static assets
+└── index.html              # HTML template
+```
+
+---
+
+## 📜 License
+
+This project is open-source and available under the **MIT License**.
+
+---
+
+<p align="center">
+  <sub>Built with ❤️ for Kenyan Farmers using Google Vertex AI & Agentic Design Kit (ADK)</sub>
+</p>
