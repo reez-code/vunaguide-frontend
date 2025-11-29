@@ -1,16 +1,63 @@
-# React + Vite
+📱 VunaGuide Frontend (React + Vite)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The client-side application for VunaGuide, designed with a mobile-first approach to serve smallholder farmers in low-bandwidth environments. It provides a clean interface for diagnosing crop diseases via camera and chatting with the AI Agronomist.
 
-Currently, two official plugins are available:
+✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Dual-Mode Interface: Seamlessly switch between Diagnose (Camera) and Chat (Text) tabs.
 
-## React Compiler
+Mobile-Optimized: Large touch targets, native camera integration, and responsive grid layouts.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Real-Time Feedback: Animated loading states and clear result cards.
 
-## Expanding the ESLint configuration
+Google Search Integration: Displays real-time grounded responses from the backend.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+🛠️ Tech Stack
+
+Core: React 18, Vite
+
+Styling: Tailwind CSS v4 (via @tailwindcss/vite)
+
+Icons: Lucide React
+
+Animations: Framer Motion
+
+HTTP Client: Axios
+
+🚀 Setup Guide
+
+1. Prerequisites
+
+Node.js 18+ installed.
+
+The VunaGuide Backend running locally (or deployed).
+
+2. Installation
+
+# Install dependencies
+
+npm install
+
+3. Configuration
+
+Create a .env file in the root directory (optional if using default localhost):
+
+# Point this to your FastAPI backend URL
+
+VITE_API_URL=[http://127.0.0.1:8000](http://127.0.0.1:8000)
+
+4. Running Development Server
+
+npm run dev
+
+The app will launch at: http://localhost:5173
+
+📱 How to Use
+
+Diagnose Mode: Click the Camera icon to snap a photo of a sick plant. The app will display the disease name, confidence score, and treatment options.
+
+Chat Mode: Ask questions like "When is the rainy season?" to get answers grounded in Google Search data.
+
+📜 License
+
+MIT License.
